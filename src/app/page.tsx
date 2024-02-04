@@ -1,6 +1,6 @@
 "use client";
 
-import { Chat } from "@/components/Chat";
+import { UserCheck } from "@/components/UserCheck";
 import { ChatProvider } from "./contexts/ChatContext";
 import { UserProvider } from "./contexts/UserContext";
 
@@ -10,7 +10,7 @@ export default function Home() {
       <UserProvider>
         <ChatProvider>
           <h1 className="text-3xl my-3 text-center">Simple chat</h1>
-          <Chat />
+          <UserCheck />
         </ChatProvider>
       </UserProvider>
     </div>

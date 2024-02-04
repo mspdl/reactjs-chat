@@ -5,7 +5,7 @@ export const User = () => {
   const [nameInput, setNameInput] = useState("");
   const userCtx = useUser();
 
-  const handleButtonName = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyUpAction = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code.toLowerCase() === "enter") {
       setName();
     }
@@ -23,7 +23,6 @@ export const User = () => {
     if (isNameValid()) {
       userCtx?.setName(nameInput);
     }
-    console.log(userCtx?.name)
   };
 
   return (
@@ -36,7 +35,7 @@ export const User = () => {
           className="flex-1 border border-white/30 rounded-md px-4 py-3 text-white bg-white/10 outline-none"
           value={nameInput}
           onChange={(e) => setNameInput(e.target.value)}
-          onKeyUp={handleButtonName}
+          onKeyUp={handleKeyUpAction}
         />
         <div className="flex justify-center">
           <button
